@@ -1,5 +1,6 @@
 public class User {
     private String name;
+    private String Email;
     private String UserID;
     private String PhoneNumber;
     private String Password;
@@ -21,6 +22,10 @@ public class User {
 
     public void SetUserID(String UserID) {
         this.UserID = UserID;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public void SetPhoneNumber(String PhoneNumber) {
@@ -49,6 +54,10 @@ public class User {
 
     public String getUserID() {
         return UserID;
+    }
+
+    public String getEmail() {
+        return Email;
     }
 
     public void SetAddress(String city, String Street, int HouseNumber, int ApartmentNumber) {
