@@ -9,6 +9,8 @@ public class Register {
             System.out.println("Username already exists. Please choose another username.");
             UserName = scanner.next();
         }
+        System.out.println("Enter Your Email");
+        String Email = scanner.next();
         System.out.println("Enter Your Password");
         String Password = scanner.next();
         System.out.println("Enter Your ID");
@@ -25,6 +27,7 @@ public class Register {
         String Street = scanner.next();
         User user = new User();
         user.SetName(UserName);
+        user.setEmail(Email);
         user.SetUserID(UserID);
         user.SetPassword(Password);
         user.SetPhoneNumber(PhoneNumber);
