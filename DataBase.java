@@ -247,4 +247,11 @@ public class DataBase {
         return it ;
     }
 
+    public void displayCatalog(){
+        System.out.println(" id  name   brand  Category  discount  price  available quantity");
+        for (Map.Entry<Integer, Item> e : items.entrySet()) {
+            Item it = e.getValue() ;
+            System.out.println( it.getId() + "  " + it.getName() + "  " + it.getBrand() + "  " + it.getCategory() +"  "+ it.getDiscountPercentage() + "  "+ it.getPrice()  +"  "+ it.getQuantity() );
+        }
+    }
 }
