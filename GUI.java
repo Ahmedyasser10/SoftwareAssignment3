@@ -55,7 +55,7 @@ public class GUI {
                 int choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
-                        DB.RegisterUser(scanner);
+                        DB.displayCatalog();
                         break;
                     case 2:
                         System.out.println("enter the item ID to add");
