@@ -6,15 +6,20 @@ public class User {
     private String Password;
     private Address Add;
 
+    private shoppingCart mycart ;
+
+
     private boolean LoggedIn;
 
     public User() {
         LoggedIn = false;
         Add = new Address();
+
     }
 
     public void Login(){
         LoggedIn = true;
+        mycart = new shoppingCart(Integer.parseInt(UserID)) ;
     }
     public void SetName(String name) {
         this.name = name;
@@ -69,5 +74,8 @@ public class User {
         Add.SetHouseNumber(HouseNumber);
     }
 
+    public  shoppingCart getMycart(){return mycart ;}
+    public boolean getstatus(){return LoggedIn ;}
+    public void setstatus(boolean s ){ LoggedIn = s ; }
 
 }
