@@ -1,3 +1,4 @@
+package org.example;
 public class Payment {
     private boolean UponDelivery ;
     private boolean smartWallet ;
