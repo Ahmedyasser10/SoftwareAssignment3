@@ -1,8 +1,9 @@
+package org.example;
+import javax.mail.*;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
 public class DataBase {
     private HashMap<String, User> users = new HashMap<>();
     private HashMap< Integer, Item > items = new HashMap<>();
@@ -88,7 +89,7 @@ public class DataBase {
             return user ;
         } else {
             System.out.println("Username not found. Please register first.");
-            return null ;
+            return new User() ;
         }
     }
     public boolean checkPassword(String password){
@@ -142,7 +143,18 @@ public class DataBase {
         user.SetPassword(Password);
         user.SetPhoneNumber(PhoneNumber);
         user.SetAddress(City, Street, HouseNumber, ApartNumber);
-        System.out.println(UserName);
+        EmailSender emailSender = new EmailSender();
+        String s, OTP;
+        s = emailSender.generateOTP();
+        emailSender.sendOTPByEmail(Email,s);
+        System.out.println("Enter OTP");
+        OTP = scanner.next();
+        while (!OTP.equals(s)){
+            System.out.println("Invalid OTP Please Try Again");
+            s = emailSender.generateOTP();
+            emailSender.sendOTPByEmail(Email,s);
+            OTP = scanner.next();
+        }
         users.put(UserName, user);
 
 
