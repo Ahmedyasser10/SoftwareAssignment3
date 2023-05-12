@@ -1,3 +1,4 @@
+package org.example;
 class Address {
     private String city;
     private String Street;
