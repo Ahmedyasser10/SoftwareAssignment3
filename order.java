@@ -1,5 +1,5 @@
+package org.example;
 import java.util.Map;
-
 public class order {
     private shoppingCart cart ;
     private boolean status ;
