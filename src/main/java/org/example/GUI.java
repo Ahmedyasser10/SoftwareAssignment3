@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class GUI {
     private DataBase DB = new DataBase();
     private User user = new User();
+
     shoppingCart mycart = new shoppingCart() ;
 
     void login() {
@@ -24,7 +25,8 @@ public class GUI {
                 System.out.println("\nPlease select an option:");
                 System.out.println("1. Register");
                 System.out.println("2. Login");
-                System.out.println("3. Exit");
+                System.out.println("3. display Catalog");
+                System.out.println("4. Exit");
 
                 int choice = scanner.nextInt();
                 switch (choice) {
@@ -35,6 +37,9 @@ public class GUI {
                         user = DB.Login(scanner);
                         break;
                     case 3:
+                        DB.displayCatalog();
+                        break;
+                    case 4:
                         DB.save();
                         System.exit(0);
 
